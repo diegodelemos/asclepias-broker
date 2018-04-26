@@ -20,6 +20,13 @@ from .models import Identifier
 
 blueprint = Blueprint('asclepias_ui', __name__, template_folder='templates')
 
+#
+# Health check view
+#
+@blueprint.route('/ping', methods=['HEAD', 'GET'])
+def ping():
+    """Health check ping view."""
+    return 'OK'
 
 #
 # UI Views
